@@ -3,117 +3,288 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DevOps Engineer - [Your Name]</title>
+    <title>DevOps Engineer CV | Đorđe Dragoslavić</title>
     <style>
+        :root {
+            --primary: #3498db;
+            --dark: #2c3e50;
+            --light: #ecf0f1;
+            --shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            margin: 20px;
-            background-color: #f4f4f4;
-            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light);
+            color: var(--dark);
+            transition: background 0.3s ease;
         }
-
+        body.dark-mode {
+            background-color: var(--dark);
+            color: var(--light);
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
         header {
-            background-color: #007bff;
-            color: white;
-            padding: 1em;
             text-align: center;
+            margin-bottom: 30px;
+        }
+        h1 {
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+        h2 {
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 5px;
+        }
+        .contact-info {
+            margin: 10px 0;
+        }
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .skill-category {
+            flex: 1;
+            min-width: 250px;
+        }
+        .skill {
+            margin-bottom: 10px;
+        }
+        .skill-name {
+            display: flex;
+            justify-content: space-between;
+        }
+        .skill-bar {
+            height: 10px;
+            background-color: #ddd;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+        .skill-progress {
+            height: 100%;
+            border-radius: 5px;
+            background-color: var(--primary);
+        }
+        .experience, .education {
             margin-bottom: 20px;
         }
-
-        h1, h2 {
-            color: #0056b3;
+        .job, .degree {
+            margin-bottom: 15px;
         }
-
-        section {
-            margin-bottom: 20px;
-            padding: 15px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        .job-title, .degree-title {
+            font-weight: bold;
         }
-
-        ul {
-            list-style-type: disc;
-            padding-left: 20px;
+        .date {
+            color: #7f8c8d;
+            font-style: italic;
         }
-
-        /* Add more styling as needed */
+        .toggle-mode {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .contact-links a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .contact-links a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 600px) {
+            .skills-container {
+                flex-direction: column;
+            }
+            .contact-links {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+        }
     </style>
 </head>
 <body>
+    <button class="toggle-mode" onclick="toggleDarkMode()">🌙 Dark Mode</button>
+    <div class="container">
+        <header>
+            <h1>[Your Name]</h1>
+            <p class="title">DevOps Engineer | Database & Systems Specialist</p>
+            <div class="contact-info">
+                <p>📧 Email: your.email@example.com | 📞 Phone: (123) 456-7890</p>
+                <p>🔗 LinkedIn: <a href="https://linkedin.com/in/yourprofile">linkedin.com/in/yourprofile</a> | 🐱 GitHub: <a href="https://github.com/yourusername">github.com/yourusername</a></p>
+            </div>
+        </header>
 
-    <header>
-        <h1>[Your Name]</h1>
-        <p>DevOps Engineer | Passionate about Automation and Reliability</p>
-    </header>
+        <section id="skills">
+            <h2>Technical Skills</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>DevOps & Cloud</h3>
+                    <div class="skill">
+                        <div class="skill-name">
+                            <span>Docker / Kubernetes</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-name">
+                            <span>AWS / Azure</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-name">
+                            <span>CI/CD (Jenkins, GitHub Actions)</span>
+                            <span>88%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 88%;"></div>
+                        </div>
+                    </div>
+                </div>
 
-    <section id="summary">
-        <h2>Summary</h2>
-        <p>Highly motivated and results-oriented DevOps Engineer with [Number] years of experience in building, automating, and maintaining robust and scalable infrastructure.  Proficient in Linux and Windows administration, database management (SQL/NoSQL), Bash scripting, automation tools, Docker containerization, and Python programming for infrastructure as code and tooling development. Dedicated to improving efficiency, reliability, and security through DevOps best practices.</p>
-    </section>
+                <div class="skill-category">
+                    <h3>Scripting & Automation</h3>
+                    <div class="skill">
+                        <div class="skill-name">
+                            <span>Bash Scripting</span>
+                            <span>95%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 95%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-name">
+                            <span>Python</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-name">
+                            <span>Ansible / Terraform</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%;"></div>
+                        </div>
+                    </div>
+                </div>
 
-    <section id="skills">
-        <h2>Skills</h2>
-        <ul>
-            <li><strong>Operating Systems:</strong> Linux (Ubuntu, CentOS, Debian), Windows Server</li>
-            <li><strong>Cloud Platforms:</strong> [AWS, Azure, GCP - Add your experience]</li>
-            <li><strong>Databases:</strong> MySQL, PostgreSQL, MongoDB, Redis [Add others you know]</li>
-            <li><strong>Scripting & Automation:</strong> Bash Scripting, Python, PowerShell</li>
-            <li><strong>Configuration Management:</strong> Ansible, Chef, Puppet [Choose and add what you use]</li>
-            <li><strong>Containerization:</strong> Docker, Kubernetes [If applicable]</li>
-            <li><strong>CI/CD:</strong> Jenkins, GitLab CI, CircleCI, Azure DevOps [Add your experience]</li>
-            <li><strong>Infrastructure as Code (IaC):</strong> Terraform, CloudFormation [Add others you know]</li>
-            <li><strong>Monitoring & Logging:</strong> Prometheus, Grafana, ELK Stack (Elasticsearch, Logstash, Kibana), Splunk</li>
-            <li><strong>Version Control:</strong> Git (GitHub, GitLab, Bitbucket)</li>
-        </ul>
-    </section>
+                <div class="skill-category">
+                    <h3>Database & Systems</h3>
+                    <div class="skill">
+                        <div class="skill-name">
+                            <span>Linux Administration</span>
+                            <span>92%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 92%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-name">
+                            <span>Windows Server</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-name">
+                            <span>MySQL / PostgreSQL</span>
+                            <span>88%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 88%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <section id="experience">
-        <h2>Experience</h2>
+        <section id="experience">
+            <h2>Work Experience</h2>
+            <div class="experience">
+                <div class="job">
+                    <div class="job-title">Senior DevOps Engineer | [Company Name]</div>
+                    <div class="date">2020 - Present</div>
+                    <ul>
+                        <li>Automated deployment pipelines using Docker, Kubernetes, and Jenkins, reducing deployment time by 40%.</li>
+                        <li>Managed cloud infrastructure (AWS/Azure) with Terraform and Ansible.</li>
+                        <li>Optimized database performance for high-traffic applications.</li>
+                    </ul>
+                </div>
+                <div class="job">
+                    <div class="job-title">Systems Administrator | [Previous Company]</div>
+                    <div class="date">2017 - 2020</div>
+                    <ul>
+                        <li>Administered Linux/Windows servers and implemented monitoring solutions.</li>
+                        <li>Developed Bash/Python scripts for automated backups and log analysis.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-        <h3>[Job Title] | [Company Name] | [Dates of Employment]</h3>
-        <ul>
-            <li>Implemented and maintained CI/CD pipelines using [Tools used], resulting in a [Quantifiable result, e.g., 30% reduction in deployment time].</li>
-            <li>Automated infrastructure provisioning and configuration management using [Tools used] for both Linux and Windows environments.</li>
-            <li>Managed and optimized database performance (MySQL/PostgreSQL) through query optimization, indexing, and replication strategies.</li>
-            <li>Developed Bash scripts to automate routine tasks such as log rotation, system monitoring, and user management.</li>
-            <li>Containerized applications using Docker and orchestrated them with [Kubernetes or other orchestration tool - if applicable].</li>
-            <li>Wrote Python scripts for infrastructure automation, API integration, and custom tooling development.</li>
-            <li>Troubleshooted and resolved production issues related to servers, databases, and network connectivity.</li>
-            <li>Implemented monitoring solutions using [Tools used] to proactively identify and address potential problems.</li>
-        </ul>
+        <section id="education">
+            <h2>Education</h2>
+            <div class="education">
+                <div class="degree">
+                    <div class="degree-title">MSc in Computer Science | [University Name]</div>
+                    <div class="date">2015 - 2017</div>
+                </div>
+                <div class="degree">
+                    <div class="degree-title">BSc in Information Technology | [University Name]</div>
+                    <div class="date">2011 - 2015</div>
+                </div>
+            </div>
+        </section>
 
-        <!-- Add more experience entries as needed -->
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <div class="contact-links">
+                <a href="mailto:your.email@example.com">Email Me</a>
+                <a href="https://linkedin.com/in/yourprofile">LinkedIn</a>
+                <a href="https://github.com/yourusername">GitHub</a>
+                <a href="tel:+1234567890">Call Me</a>
+            </div>
+        </section>
+    </div>
 
-    </section>
-
-    <section id="projects">
-        <h2>Projects</h2>
-
-        <h3>[Project Name 1]</h3>
-        <p>[Brief description of the project and your role.  Highlight technologies used.]</p>
-
-        <h3>[Project Name 2]</h3>
-        <p>[Brief description of the project and your role. Highlight technologies used.]</p>
-
-    </section>
-
-
-    <section id="education">
-        <h2>Education</h2>
-        <h3>[Degree Name] | [University Name] | [Graduation Year]</h3>
-        <p>[Relevant coursework or specializations]</p>
-    </section>
-
-    <section id="contact">
-        <h2>Contact</h2>
-        <ul>
-            <li><strong>Email:</strong> <a href="mailto:[Your Email Address]">[Your Email Address]</a></li>
-            <li><strong>LinkedIn:</strong> <a href="[Your LinkedIn Profile URL]"> [Your LinkedIn Profile URL]</a></li>
-            <li><strong>GitHub:</strong> <a href="[Your GitHub Profile URL]"> [Your GitHub Profile URL]</a></li>
-        </ul>
-    </section>
-
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            const button = document.querySelector('.toggle-mode');
+            button.textContent = document.body.classList.contains('dark-mode') ? '☀️ Light Mode' : '🌙 Dark Mode';
+        }
+    </script>
 </body>
 </html>
